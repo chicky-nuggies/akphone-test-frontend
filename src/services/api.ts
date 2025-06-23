@@ -4,12 +4,19 @@ import { config } from "../config";
 
 const apiClient = axios.create({
   baseURL: config.API_BASE_URL,
-  // baseURL: "https://api.weishen.studio",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
   },
 });
+
+export const setAuthToken = (token: string | null) => {
+  if (token) {
+    apiClient.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  } else {
+    delete apiClient.defaults.headers.common["Authorization"];
+  }
+};
 
 export const apiService = {
   // Get all users
