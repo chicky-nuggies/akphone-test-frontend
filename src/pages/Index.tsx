@@ -18,7 +18,7 @@ function Index() {
 
   const signOutRedirect = () => {
     const clientId = "1l8p4kqq5avkf0dtf8ur64e68l";
-    const logoutUri = "http://localhost:5173/login";
+    const logoutUri = `${window.location.origin}/login`;
     const cognitoDomain =
       "https://ap-southeast-5ijo7l0om1.auth.ap-southeast-5.amazoncognito.com";
     window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(
@@ -65,6 +65,8 @@ function Index() {
       <div className="app">
         <Header userCount={0} />
         <main className="app-main">
+          <button onClick={() => signOutRedirect()}>Sign out</button>
+
           <ErrorMessage message={error} onRetry={fetchUsers} />
         </main>
       </div>
