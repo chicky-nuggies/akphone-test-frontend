@@ -88,12 +88,6 @@ function Index() {
                 ? auth.user?.profile["cognito:groups"][0]
                 : ""}
             </h1>
-            <div className="health-indicator healthy">
-              <p> Hello: {auth.user?.profile.email} </p>
-              <p> ID Token: {auth.user?.id_token} </p>
-              {/* <p> Access Token: {auth.user?.access_token} </p> */}
-              {/* <p> Refresh Token: {auth.user?.refresh_token} </p> */}
-            </div>
           </div>
 
           <div className="users-grid">
