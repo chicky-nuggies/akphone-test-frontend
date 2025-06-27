@@ -87,7 +87,7 @@ import Index from "./pages/Index";
 import LogIn from "./pages/LogIn";
 import ProtectedRoute from "./features/auth/components/ProtectedRoute";
 import AuthCallback from "./features/auth/components/AuthCallback";
-import { withAuthenticationRequired } from "react-oidc-context";
+// import { withAuthenticationRequired } from "react-oidc-context";
 
 function App() {
   return (
